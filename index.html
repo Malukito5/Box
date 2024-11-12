@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Malukito boot</title>
+  </head>
+  <body>
+	<div class="head">
+	  <h1>Malukito - Aviator box</h1>
+	  <fieldset class="dreamH">
+		<section>
+		  <div class="clock">
+			<div class="container">
+			  <h2 id="hour">00</h2>
+			  <h2 class="dot">:</h2>
+			  <h2 id="minutes">00</h2>
+			  <h2 class="dot">:</h2>
+			  <h2 id="seconds">00</h2>
+			</div>
+		  </div>
+		</section>
+	  </fieldset>
+	
+	</div>
+	<div class="body">
+	  
+	  <div class="login">
+		<label>Numero de Acesso</label>
+		<input type="number" placeholder="Ex: 9200871538" />
+		<label>Codigo de acesso</label>
+		<input type="password" placeholder="senha" />
+		<input type="button" value="Entrar" onclick="login()" />
+
+		<ol>
+		  <li><strong>Contactar via:</strong></li>
+		  <li><a href="https://m.facebook.com/profile.php?id=100091666827276"><img src="face.png"></a></li>
+		  <li onclick="contac(0)"><img src="what.png"></li>
+		  <li onclick="contac(0)"><img src="phone.png"></li>
+		</ol>
+
+	  </div>
+
+	  <div class="choose none">
+
+		<ul>
+		  <li onclick="choose(0)"><img src="bantu.jpeg"></li>
+		  <li onclick="choose(1)"><img src="pre.jpeg"></li>
+		  <li onclick="choose(0)"><img src="ele.jpeg"></li>
+		  <li onclick="choose(0)"><img src="888b.png"></li>
+		</ul>
+
+	  </div>
+
+
+	  <div class="Palpites none">
+		<h3>Palpites</h3>
+		<ul>
+		  <li><strong>17h:40</strong>possivel<em> 5x 11x 17x</em></li>
+		</ul>
+	  </div>
+	  
+	  <div class="contac none">
+		<li onclick="contac(1)">Fechar</li>
+		<p>Ligue ou pesquise no whatsapp: <strong>928089975</strong></p>
+	  </div>
+	</div>
+	<div class="calc none">
+	<section class=""><h3 onclick="show()">Estatistica</h3>
+	  
+	</section>
+	<section id="proba">
+	  <div id="next"><h4>Prox. casa <br><em></em></h4></div >
+	  <div id="range"><h4>Prox. Sequencia <br><em></em></h4></div>
+	  <div id="times"><h4>Minutos <br><em></em></h4></div>
+	  <div id="bigPay"><h4>Intervalo de rosas <br><em>0</em></h4></div>
+	  <div id="inTime"><h4>Inter d. Seq<br><em>0</em></h4></div>
+	  <div id="grafic"><h4>Tempo de Rosas<br><em></em></h4></div>
+	</section>
+	<section id="info">
+	  <ol class="timer"><li>Hora</li><li class="odd">Min</li><li class="odd">ODD</li></ol>
+	  <ol class="user"><li class="ecept">0</li><li class="ecept odd">0</li><li class="ecept odd">1</li></ol>
+	  <ol class="upDown">
+		<li onclick="num(1,0)" class="up"><i>+1</i></li><li onclick="num(1,1)" class="up"><i>+1</i></li><li onclick="num(10,1)" class="up"><i>+10</i></li><li onclick="num(1,2)" class="up"><i>+1</i></li><li  onclick="num(10,2)" class="up"><i>+10</i></li>
+		<li onclick="num(-1,0)"><i>-1</i></li><li onclick="num(-1,1)"><i>-1</i></li><li onclick="num(0,1)"><i>R0</i></li><li onclick="num(-1,2)"><i>-1</i></li><li onclick="num(0,2)"><i>R0</i></li>
+	  </ol>
+	  <input type="button" value="Add" onclick="addTime()"/>
+	</section>
+	  </div>
+	<div id="manager" onclick="refresh()">&lt;</div>
+	<div class="dream">
+	  
+	 
+
+	</div>
+	
+	<script type="text/javascript" src="control.js"></script>
+<script>
+	function clock(){
+
+ var hours = document.getElementById('hour');
+ var minutes = document.getElementById('minutes');
+ var seconds = document.getElementById('seconds');
+
+
+ var h = new Date().getHours();
+ var m = new Date().getMinutes();
+ var s = new Date().getSeconds();
+ 
+
+ /*Convert 24 Hour Time To 12 Hour with AM PM Indicator
+     if(h > 12){
+         h = h - 12;
+         var am = "PM";
+     }*/
+
+     //Add 0 to the beginning of number if less than 10
+ h = (h < 10) ? "0" + h : h;
+ m = (m < 10) ? "0" + m : m;
+ s = (s < 10) ? "0" + s : s;
+
+ hours.innerHTML = h;
+ minutes.innerHTML = m;
+ seconds.innerHTML = s;
+ 
+
+ }
+
+ var interval = setInterval(clock, 1000);
+</script>
+  </body>
+</html>
