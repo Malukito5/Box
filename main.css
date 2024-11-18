@@ -3,6 +3,7 @@ body{
 	background-image:url("tool.jpg");
 	background-color:#ccc;
 	background-size:20%;
+	padding-bottom:4em;
 }
 *{
 	margin: 0;
